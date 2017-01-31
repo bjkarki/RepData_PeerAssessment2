@@ -142,19 +142,18 @@ $(document).ready(function () {
 <div id="loading-the-data" class="section level3">
 <h3>Loading the Data</h3>
 <p>First of all, we’ll check if the required <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2">Storm Data</a> is available to load into the environment. If not present, the dataset will be downloaded and then loaded into the environment.</p>
-<p>For this project, the database was explored on the following date: 2017-01-29 15:55:34</p>
+<p>For this project, the database was explored on the following date: 2017-01-30 18:04:59</p>
 <pre class="r"><code># Check if the dataset is availabe
 reqFile &lt;- &quot;repdata%2Fdata%2FStormData.csv.bz2&quot;
 
 if (!file.exists(reqFile)) {
         fileURL &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2&quot;
         download.file(fileURL,reqFile,method = &quot;curl&quot;)
-        unlink(&quot;repdata%2Fdata%2FStormData.csv.bz2&quot;, recursive = TRUE)
         date.download &lt;- Sys.time()
         print(date.download)
-}
-
-# Load data
+}</code></pre>
+<pre><code>## [1] &quot;2017-01-30 18:01:37 MST&quot;</code></pre>
+<pre class="r"><code># Load data
 stormData &lt;- read.csv(file = bzfile(reqFile), stringsAsFactors = FALSE)</code></pre>
 <p>Let’s also load the required libraries for exploratory analysis:</p>
 <pre class="r"><code>library(dplyr)
@@ -388,7 +387,7 @@ grid.arrange(f1, f2, ncol = 2,
 </div>
 <div id="conclusion" class="section level2">
 <h2>CONCLUSION</h2>
-<p>Thus, <strong>FLOOD</strong>, <strong>DROUGHT</strong> and <strong>TORNADO</strong> are the three extreme weather events that causes the most impact to the human health and economy.</p>
+<p>Thus, <strong>FLOOD</strong>, <strong>DROUGHT</strong> and <strong>TORNADO</strong> are the three extreme weather events that causes the most impact to the human health and the economy.</p>
 </div>
 </div>
 

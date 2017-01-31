@@ -41,7 +41,6 @@ reqFile <- "repdata%2Fdata%2FStormData.csv.bz2"
 if (!file.exists(reqFile)) {
         fileURL <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
         download.file(fileURL,reqFile,method = "curl")
-        unlink("repdata%2Fdata%2FStormData.csv.bz2", recursive = TRUE)
         date.download <- Sys.time()
         print(date.download)
 }
@@ -252,4 +251,4 @@ grid.arrange(f1, f2, ncol = 2,
 
 ## CONCLUSION
 
-Thus, __FLOOD__, __DROUGHT__ and __TORNADO__ are the three extreme weather events that causes the most impact to the human health and economy.
+Thus, __FLOOD__, __DROUGHT__ and __TORNADO__ are the three extreme weather events that causes the most impact to the human health and the economy.

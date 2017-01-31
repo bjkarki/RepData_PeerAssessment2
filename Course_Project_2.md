@@ -24,7 +24,7 @@ Based on the dataset, which was recorded from 1950 to November, 2011, the result
 
 First of all, we'll check if the required [Storm Data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) is available to load into the environment. If not present, the dataset will be downloaded and then loaded into the environment.
 
-For this project, the database was explored on the following date: 2017-01-29 15:55:34
+For this project, the database was explored on the following date: 2017-01-30 18:04:59
 
 
 ```r
@@ -34,11 +34,16 @@ reqFile <- "repdata%2Fdata%2FStormData.csv.bz2"
 if (!file.exists(reqFile)) {
         fileURL <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
         download.file(fileURL,reqFile,method = "curl")
-        unlink("repdata%2Fdata%2FStormData.csv.bz2", recursive = TRUE)
         date.download <- Sys.time()
         print(date.download)
 }
+```
 
+```
+## [1] "2017-01-30 18:01:37 MST"
+```
+
+```r
 # Load data
 stormData <- read.csv(file = bzfile(reqFile), stringsAsFactors = FALSE)
 ```
@@ -370,4 +375,4 @@ grid.arrange(f1, f2, ncol = 2,
 
 ## CONCLUSION
 
-Thus, __FLOOD__, __DROUGHT__ and __TORNADO__ are the three extreme weather events that causes the most impact to the human health and economy.
+Thus, __FLOOD__, __DROUGHT__ and __TORNADO__ are the three extreme weather events that causes the most impact to the human health and the economy.
